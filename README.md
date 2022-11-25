@@ -9,7 +9,7 @@
 
 ## 📼 DEMO
 
-- <a herf="/">📎 구동 영상</a>
+- <a herf="https://www.youtube.com/watch?v=uIBfznhRL5o">📎 구동 영상</a>
 
 ## 👩‍💻 DB Modeling
 
