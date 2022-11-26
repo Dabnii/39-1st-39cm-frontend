@@ -47,6 +47,18 @@
 1. 상품 디테일 페이지
 1. 리뷰, 좋아요 기능
 
+## 🥳 제작파트
+
+1. Nav
+2. Nav search
+3. Product detail
+4. Main page banner 
+
+![Main-Gif](https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif)
+
+
+
+
 <br>
 
 ---
