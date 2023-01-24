@@ -1,5 +1,5 @@
 {
-  "name": "jojoclub-frontend",
+  "name": "39cm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,8 +10,10 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-stars": "^2.2.5",
     "sass": "^1.56.1",
     "styled-reset": "^4.4.2",
+    "swiper": "^8.4.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

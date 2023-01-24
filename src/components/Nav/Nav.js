@@ -15,15 +15,15 @@ export default function Nav() {
 
   useEffect(() => {
     fetch("data/DropDownData.json")
-      .then((response) => response.json())
-      .then((result) => setDropDownData(result));
+      .then(response => response.json())
+      .then(result => setDropDownData(result));
 
     //상품리스트 불러오는 fetch
     fetch(
       `http://${ipAddress}:3000/products?limit=&offset=&sort=&color=&min_price=&max_price=&category=&brand=&product_gender=`
     )
-      .then((response) => response.json())
-      .then((result) => setItemList(result.products));
+      .then(response => response.json())
+      .then(result => setItemList(result.products));
   }, []);
 
   return (
@@ -41,7 +41,7 @@ export default function Nav() {
             />
           </Link>
           <div className="navContentBox">
-            {NavIconList.map((el) => {
+            {NavIconList.map(el => {
               if (el.id !== 3) {
                 return (
                   <div key={el.id}>
@@ -139,7 +139,7 @@ export default function Nav() {
                   <input
                     className="navSearchInput"
                     placeholder="Search"
-                    onChange={(e) => {
+                    onChange={e => {
                       setInputState(e.target.value);
                     }}
                   />
@@ -153,9 +153,6 @@ export default function Nav() {
                   <span className="topTopic">추천검색어</span>
                   <div className="topKeyword">
                     <ul className="keywordList">
-                      {/* <Link to={`/ProductDetail/`}>
-                        <li>검색어</li>
-                      </Link> */}
                       {itemList &&
                         itemList.map((item, index) => {
                           if (

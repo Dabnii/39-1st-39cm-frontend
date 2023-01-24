@@ -1,42 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "../../../styles/common.scss";
+@import "../../../styles/mixin.scss";
 
-// @font-face {
-//   font-family: "Campton";
-//   src: local("Campton"), url("/styles/font/Campton-BoldDEMO.otf") format("otf");
-// }
+.reviewInfo {
+  align-items: center;
 
-/* variable set */
-$FontFace: "Campton", "Poppins", "Roboto", "Noto Sans KR", sans-serif;
-$greyColor: #f2f2f2;
-$deepGreyColor: #d4d4d4;
-$darkGreyColor: #323237;
-$borderLine: 4px solid black;
-$borderThinBlack: 1px solid black;
+  .reviewTopLeftBox {
+    display: flex;
+    align-items: center;
 
-/* mixin set */
-@mixin unsetDefault {
-  border: none;
-  background-color: transparent;
-  outline: none;
+    .reactStarts {
+      margin-left: 1rem;
+    }
+  }
+
+  .reviewTopRightBox {
+  }
 }
-
-@mixin flex($justify-content, $align-items) {
-  display: flex;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-
-@mixin fontSet($size, $weight) {
-  font-size: $size;
-  font-weight: $weight;
-}
-
-@mixin widHeight($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-.reviewbBox {
+.reviewBox {
   @include widHeight(62rem, 30rem);
   position: relative;
   overflow: hidden;

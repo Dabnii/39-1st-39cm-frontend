@@ -1,0 +1,35 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/common.scss";
+
+/* variable set */
+
+.topToEndContainer {
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+
+  button {
+    @include widHeight(2rem, 2rem);
+    @include flex(center, center);
+    appearance: unset;
+    border: none;
+    background-color: black;
+    color: white;
+
+    &:first-child {
+      border-radius: 50% 50% 0 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 0 50% 50%;
+    }
+
+    img {
+      width: 60%;
+      justify-content: center;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactStars from "react-stars";
 import "./ReviewPage.scss";
 
 const ReviewPage = ({ pdData }) => {
@@ -7,34 +8,13 @@ const ReviewPage = ({ pdData }) => {
       <section className="reviewContainer">
         <div className="reviewInfo">
           <div className="reviewTopLeftBox">
-            <span className="reviewCount">
-              리뷰 Review
-              <img
-                className="start"
-                src="/images/leedabin/startOrange.png"
-                alt="start"
-              />
-              <img
-                className="start"
-                src="/images/leedabin/startOrange.png"
-                alt="start"
-              />
-              <img
-                className="start"
-                src="/images/leedabin/startOrange.png"
-                alt="start"
-              />
-              <img
-                className="start"
-                src="/images/leedabin/startOrange.png"
-                alt="start"
-              />
-              <img
-                className="start"
-                src="/images/leedabin/startOrange.png"
-                alt="start"
-              />
-            </span>
+            <span className="reviewCount">리뷰 Review</span>
+            <ReactStars
+              className="reactStarts"
+              value={pdData.score}
+              edit={false}
+              color2={"orangered"}
+            />
           </div>
           <div className="reviewTopRightBox">
             <span className="reviewRule">
@@ -43,19 +23,19 @@ const ReviewPage = ({ pdData }) => {
           </div>
         </div>
         {pdData.reviews &&
-          pdData.reviews.map((el) => {
+          pdData.reviews.map(review => {
             return (
-              <div className="reviewbBox">
+              <div className="reviewBox">
                 <div className="reviewPhoto">
                   <img
                     className="reviewImage"
-                    src={el.reviewImage}
+                    src={review.reviewImage}
                     alt="reviewPhoto"
                   />
                   <div className="reviewCtx">
-                    <h3 className="reviewTitle">{el.reviewTitle}</h3>
-                    <h3 className="reviewUser">{el.reviewUser}</h3>
-                    <span className="ctx">{el.reviewContent}</span>
+                    <h3 className="reviewTitle">{review.reviewTitle}</h3>
+                    <h3 className="reviewUser">{review.reviewUser}</h3>
+                    <span className="ctx">{review.reviewContent}</span>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "../../styles/common.scss";
+@import "../../styles/mixin.scss";
 
 @keyframes fadeOut {
   from {
@@ -8,32 +10,6 @@
     opacity: 1;
   }
 }
-
-/*Font set*/
-$FontFace: "Poppins", "Roboto", "Noto Sans KR", sans-serif;
-
-/*Color Set*/
-$greyColor: #f2f2f2;
-$darkGreyColor: #323237;
-$whiteBG: #fff;
-
-@mixin flex($justify, $align) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-@mixin fontSet($size, $weight) {
-  font-size: $size;
-  font-weight: $weight;
-}
-
-@mixin widHeight($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-/* Top nav */
 
 nav {
   display: fixed;
@@ -134,46 +110,48 @@ nav {
 
   .sideSearchBox {
     align-items: center;
+    position: absolute;
+    margin-top: 120px;
+  }
 
-    .inputContainer {
-      position: relative;
-      border-bottom: 0.5rem solid #000;
-      @include widHeight(40rem, 4rem);
+  .inputContainer {
+    position: relative;
+    border-bottom: 0.5rem solid #000;
+    @include widHeight(40rem, 4rem);
 
-      .navSearchInput {
-        outline: none;
-        border: none;
-        background-color: transparent;
-        @include fontSet(2rem, 500);
-      }
-
-      .searchIcon {
-        position: absolute;
-        right: 0;
-        height: 3rem;
-      }
+    .navSearchInput {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      @include fontSet(2rem, 500);
     }
 
-    .searchLank {
-      margin: 1rem 0 6rem;
+    .searchIcon {
+      position: absolute;
+      right: 0;
+      height: 3rem;
+    }
+  }
 
-      .topTopic {
-        @include fontSet(1.6rem, 700);
+  .searchLank {
+    margin: 1rem 0 6rem;
+
+    .topTopic {
+      @include fontSet(1.6rem, 700);
+    }
+
+    .topKeyword {
+      .linkStyle {
+        text-decoration: none;
+        color: $darkGreyColor;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
-      .topKeyword {
-        .linkStyle {
-          text-decoration: none;
-          color: $darkGreyColor;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-
-        li {
-          padding: 1.4rem 0 0;
-        }
+      li {
+        padding: 1.4rem 0 0;
       }
     }
   }

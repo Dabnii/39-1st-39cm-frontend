@@ -8,7 +8,7 @@ const Cart = () => {
 
   const [cartItemList, setCartItemList] = useState();
   const setPaymentItem = () => {
-    const paymentItem = cartItemList.filter((obj) => {
+    const paymentItem = cartItemList.filter(obj => {
       return obj.isCheck === true;
     });
     localStorage.setItem("orderList", JSON.stringify(paymentItem));
@@ -34,12 +34,12 @@ const Cart = () => {
         authorization: localStorage.getItem("TOKEN"),
       },
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         // isCheck 항목 추가해서 리스트 저장
         // console.log(data.baskets);
         // const arr = [...data.baskets];
-        const newCartList = data.baskets.map((obj) => {
+        const newCartList = data.baskets.map(obj => {
           return { ...obj, isCheck: true };
         });
         setCartItemList(newCartList);
@@ -47,10 +47,10 @@ const Cart = () => {
   }, []);
 
   // 총 주문 수량 계산
-  const calTotalAmount = (arr) => {
+  const calTotalAmount = arr => {
     if (arr) {
       let totalAmount = 0;
-      arr.forEach((obj) => {
+      arr.forEach(obj => {
         if (obj.isCheck) {
           totalAmount += obj.amount;
         }
@@ -59,10 +59,10 @@ const Cart = () => {
     }
   };
   // 총 주문 가격 계산
-  const calTotalPrice = (arr) => {
+  const calTotalPrice = arr => {
     if (arr) {
       let priceTotal = 0;
-      arr.forEach((obj) => {
+      arr.forEach(obj => {
         if (obj.isCheck) {
           priceTotal += obj.amount * obj.productPrice;
         }
@@ -114,7 +114,7 @@ const Cart = () => {
                     basketIds: [obj.basketId],
                   }),
                 })
-                  .then((response) => {
+                  .then(response => {
                     if (response.status !== 204) {
                       throw new Error("error");
                     } else {
@@ -124,7 +124,7 @@ const Cart = () => {
                       setCartItemList(deletedItem);
                     }
                   })
-                  .catch((error) => {
+                  .catch(error => {
                     alert("장바구니 삭제에 실패하였습니다.");
                   });
               }}

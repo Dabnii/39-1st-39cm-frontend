@@ -28,8 +28,8 @@ function BestProductTop(props) {
         authorization: localStorage.getItem("TOKEN"),
       },
     })
-      .then((response) => response.json())
-      .then((result) => {
+      .then(response => response.json())
+      .then(result => {
         console.log(result.isLiked);
         setIsLiked(result.isLiked);
       });
@@ -85,7 +85,7 @@ function BestProductTop(props) {
                         },
                       }
                     )
-                      .then((response) => {
+                      .then(response => {
                         if (response.status !== 200) {
                           throw new Error("error");
                         } else {
@@ -95,7 +95,7 @@ function BestProductTop(props) {
                           setIsLiked(!isLiked);
                         }
                       })
-                      .catch((error) => {
+                      .catch(error => {
                         console.log("좋아요 삭제 실패");
                         setIsLiked(!isLiked);
                       });
@@ -110,7 +110,7 @@ function BestProductTop(props) {
                         },
                       }
                     )
-                      .then((response) => {
+                      .then(response => {
                         if (response.status !== 201) {
                           throw new Error("error");
                         } else {
@@ -120,7 +120,7 @@ function BestProductTop(props) {
                           setIsLiked(!isLiked);
                         }
                       })
-                      .catch((error) => {
+                      .catch(error => {
                         console.log("좋아요 추가 실패");
                       });
                   }

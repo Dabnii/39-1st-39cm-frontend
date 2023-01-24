@@ -10,8 +10,6 @@ function BestProductList() {
 
   const ipAddress = "13.124.197.217";
 
-  // console.log(women);
-  // console.log(women);
   const [searchParams, setSearchParams] = useSearchParams();
   const gender = searchParams.get("product_gender");
   const category = searchParams.get("category");

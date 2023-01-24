@@ -1,5 +1,36 @@
+/* mixin set */
+
 @mixin flex($justity, $align) {
   display: flex;
   justify-content: $justity;
   align-items: $align;
+}
+
+@mixin unsetDefault {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin fontSet($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin widHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin backgroundSetting($background-size, $background-position) {
+  background-color: white;
+  background-size: $background-size;
+  background-position: $background-position;
+  background-repeat: no-repeat;
 }
